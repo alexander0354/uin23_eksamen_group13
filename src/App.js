@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={<DashBoard />} />
             <Route path="/gameshop" element={<GameShop />} />
             <Route path="/mygames" element={<MyGames />} />
-            <Route path="/favourites" element={<MyFavorites />} />
+            {/*<Route path="/favourites" element={<MyFavorites />} />*/}
             <Route path="/game/:slug" element={<GamePage />} />
           </Routes>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GameCard from "./GameCard";
 
-function Dashboard() {
+function DashBoard() {
   const [newestGames, setNewestGames] = useState([]);
   const [myGames, setMyGames] = useState([]);
 
@@ -10,10 +10,9 @@ function Dashboard() {
       try {
         // Hent ut de tre nyeste spillene fra API-et
         const response = await fetch(
-          'https://api.rawg.io/api/games?ordering=-released&page_size=3&key=cb756380bfee4e919c3c398e5bd0da08',
-          { mode: 'no-cors' }
+          'https://api.rawg.io/api/games?ordering=-released&page_size=3&key=cb756380bfee4e919c3c398e5bd0da08'
         );
-        const data = await response.json()
+        const data = await response.json();
         setNewestGames(data.results);
 
         // Hent ut 4 spill fra en valgfri sjanger for My Games
@@ -55,4 +54,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DashBoard;

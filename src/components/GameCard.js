@@ -12,7 +12,7 @@ const GameCard = ({ game }) => {
           </div>
           <div className="game-card-back">
             <h3>{game.name}</h3>
-            <p>{game.description_raw.substring(0, 150)}...</p>
+            <p>{game.description_raw && game.description_raw.substring(0, 150)}...</p>
           </div>
         </Link>
       </div>
