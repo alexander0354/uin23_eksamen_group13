@@ -1,0 +1,60 @@
+// _game-card.scss
+@import 'variables';
+
+.game-card {
+  position: relative;
+  margin: 1rem;
+  width: 15rem;
+  height: 22rem;
+  overflow: hidden;
+  cursor: pointer;
+
+  .game-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .game-card-front,
+    .game-card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .game-card-front {
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      h3 {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+
+    .game-card-back {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+
+      h3 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}

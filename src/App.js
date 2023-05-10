@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import DashBoard from './components/DashBoard';
 import GameShop from './components/GameShop';
 import MyGames from './components/MyGames';
-import MyFavorites from './components/MyFavorites';
+/*import MyFavorites from './components/MyFavorites'; */
+import './sass/styles.scss';
 import GamePage from './components/GamePage';
 
 function App() {
