@@ -8,17 +8,16 @@ function DashBoard() {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        // Hent ut de tre nyeste spillene fra API-et
+        // Hent ut de tre mest populære spillene fra API-et
         const response = await fetch(
-          'https://api.rawg.io/api/games?ordering=-released&page_size=3&key=cb756380bfee4e919c3c398e5bd0da08'
+          'https://api.rawg.io/api/games?ordering=-rating&page_size=3&key=cb756380bfee4e919c3c398e5bd0da08'
         );
         const data = await response.json();
         setNewestGames(data.results);
 
-        // Hent ut 4 spill fra en valgfri sjanger for My Games
-        const genre = 'action'; // Endre til en sjanger du ønsker å vise
+        // Hent ut 10 spill for My Games
         const response2 = await fetch(
-          `https://api.rawg.io/api/games?genres=${genre}&page_size=4&key=cb756380bfee4e919c3c398e5bd0da08`
+          'https://api.rawg.io/api/games?page_size=10&key=cb756380bfee4e919c3c398e5bd0da08'
         );
         const data2 = await response2.json();
         setMyGames(data2.results);
@@ -32,24 +31,28 @@ function DashBoard() {
 
   return (
     <div className="dashboard">
-      <section className="gameshop">
+      <section className="game-shop">
         <h2>Game Shop</h2>
-        {newestGames.map((game) => (
-          <GameCard key={game.id} game={game} />
-        ))}
+        <div className="game-list">
+          {newestGames.map((game) => (
+            <GameCard key={game.id} game={game} />
+          ))}
+        </div>
       </section>
 
-      <section className="mygames">
+      <section className="my-games">
         <h2>My Games</h2>
-        {myGames.map((game) => (
-          <GameCard key={game.id} game={game} />
-        ))}
+        <div className="game-list">
+          {myGames.map((game) => (
+            <GameCard key={game.id} game={game} />
+          ))}
+        </div>
       </section>
 
-      <section className="myfavourites">
+      <aside className="my-favourites">
         <h2>My Favourites</h2>
         <p>Coming soon...</p>
-      </section>
+      </aside>
     </div>
   );
 }

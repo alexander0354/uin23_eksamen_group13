@@ -1,8 +1,11 @@
 // _header.scss
 @import 'variables';
 
+$color-black: #000000;
+$color-white: #ffffff;
+
 .App-header {
-  background-color: $color-black;
+  background-color: $header-footer-color;
   color: $color-white;
   padding: 1rem;
   display: flex;

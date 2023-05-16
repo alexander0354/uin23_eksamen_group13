@@ -1,18 +1,32 @@
-// _base.scss
+
+// _base.scss:
 @import 'variables';
+
+html, body {
+  height: 100%;
+}
 
 body {
   font-family: Arial, sans-serif;
-  color: $color-black;
+  color: $black;
   line-height: 1.6;
-  background-color: $color-white;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-  $color-white: #ffffff;
+  color: $white;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
   }
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+

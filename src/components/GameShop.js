@@ -8,7 +8,7 @@ const GameShop = () => {
     const fetchGames = async () => {
       const response = await axios.get('https://api.rawg.io/api/games?key=cb756380bfee4e919c3c398e5bd0da08', {
         params: {
-          ordering: '-released',
+          ordering: '-rating',
           page_size: 10,
         },
         headers: {
@@ -16,24 +16,23 @@ const GameShop = () => {
           'Authorization': 'Bearer cb756380bfee4e919c3c398e5bd0da08',
         },
       });
-      setGames(response.data.results.filter(game => !game.name.toLowerCase().includes('test')));
+      setGames(response.data.results);
     }
     fetchGames();
   }, []);
 
   return (
-    <div className="game-shop">
-      <h2>New Releases</h2>
-      <div className="game-list">
-        {games.map(game => (
-          <div className="game-card" key={game.id}>
-            <img src={game.background_image || "default-image.jpg"} alt={game.name} />
+    <div>
+      {games.map(game => (
+        <div className="game-card" key={game.id}>
+          <img src={game.background_image} alt={game.name} />
+          <div className="text-content">
             <h3>{game.name}</h3>
             <p>{game.released}</p>
-            <button className="buy-button">Buy</button>
+            <button>Buy</button>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

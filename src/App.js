@@ -6,6 +6,7 @@ import MyGames from './components/MyGames';
 /*import MyFavorites from './components/MyFavorites'; */
 import './sass/styles.scss';
 import GamePage from './components/GamePage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -38,6 +39,11 @@ function App() {
             <Route path="/game/:slug" element={<GamePage />} />
           </Routes>
         </div>
+        {/*<aside className="my-favourites">
+        <h2>My Favourites</h2>
+        <p>Coming soon...</p>
+        </aside>*/}
+        <Footer />
       </div>
     </Router>
   );
