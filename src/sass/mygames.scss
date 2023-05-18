@@ -1,0 +1,30 @@
+.my-games {
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+  
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(3, 0.3fr);
+      gap: 16px;
+  
+      .game-card {
+        border-radius: 4px;
+        padding: 10px;
+  
+        h3 {
+          font-size: 18px;
+          margin-bottom: 8px;
+          color:black;
+        }
+  
+        img {
+          width: 50%; 
+          height: auto;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
