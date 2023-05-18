@@ -1,31 +1,46 @@
 // _game-card.scss
 
-.game-card {
-  background-color: $light-gray;
+body{
+  position: center;
+}
+.gameShop{
+  position: center;
+  width: 100%;
+  max-width: 1200px;
   padding: $card-padding;
-  margin: $card-margin;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
 
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .text-content {
+  .game-card {
+    position: center;
+    padding: $card-padding;
+    margin: $card-margin;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: $text-content-width;
+    flex-direction: row;
+    align-items: center;
 
-    h3 {
-      margin-bottom: $card-margin;
+    img {
+      width: 60%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    button {
-      align-self: flex-end;
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: $text-content-width;
     }
+      h3 {
+        margin-bottom: $card-margin;
+      }
+
+      button {
+        align-self: flex-end;
+      }
+    
+
   }
 }

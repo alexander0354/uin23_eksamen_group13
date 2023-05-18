@@ -22,7 +22,8 @@ const GameShop = () => {
   }, []);
 
   return (
-    <div>
+    
+    <section className="gameShop">
       {games.map(game => (
         <div className="game-card" key={game.id}>
           <img src={game.background_image} alt={game.name} />
@@ -33,7 +34,7 @@ const GameShop = () => {
           </div>
         </div>
       ))}
-    </div>
+   </section>
   );
 };
 

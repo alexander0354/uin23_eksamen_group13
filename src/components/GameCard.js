@@ -2,11 +2,11 @@ import React from 'react';
 
 const GameCard = ({ game }) => {
   return (
-    <div className="game-card">
-      <div className="game-card-image">
+    <div className="gameShop"> 
+      <div className="game-card">
         <img src={game.background_image} alt={game.name} />
       </div>
-      <div className="game-card-details">
+      <div className="text-content">
         <h3>{game.name}</h3>
         <p>{game.publisher}</p>
         <button>Kjøp</button>
@@ -16,3 +16,6 @@ const GameCard = ({ game }) => {
 };
 
 export default GameCard;
+//game-card
+//game-card-image
+//game-card-details

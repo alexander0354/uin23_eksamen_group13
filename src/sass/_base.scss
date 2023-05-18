@@ -4,6 +4,7 @@
 
 html, body {
   height: 100%;
+    font-size: 18px;
 }
 
 body {
@@ -28,5 +29,11 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+}
+div, article, header, section, aside, span, footer, header {
+  box-sizing: border-box;
+}
+.transition {
+  transition: ease-in-out .4s;
 }
 

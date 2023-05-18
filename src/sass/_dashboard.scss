@@ -5,13 +5,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: $main-bg-color;
+    background-color: $main-bg-color; //ikke denne
     padding: 20px;
     min-height: 100vh; 
   
     .game-shop {
       position: relative;
-      background-color: $light-gray;
+      background-color: $light-gray; //ikke denne
       width: 100%;
       max-width: 1400px;
       padding: $card-padding;
@@ -23,10 +23,11 @@
       width: 65%;
       max-width: 1200px;
       margin-bottom: 10px;
+      text-align: justify;
     }
   
     .my-favourites {
-      background-color: $light-gray;
+      background-color: $light-gray; //ikke denne
       width: 100%;
       max-width: 1200px;
       padding: $card-padding;
@@ -53,9 +54,9 @@
     }
   
     .game-card {
-      display: flex;
+      display: grid ;
       justify-content: space-between;
-      background-color: $main-bg-color;
+      background-color: $main-bg-color;//ikke denne
       
       padding: $card-padding;
       margin: $card-margin;
@@ -66,6 +67,7 @@
       }
   
       .text-content {
+        display: grid;
         width: $text-content-width;
         display: flex;
         flex-direction: column;
@@ -86,5 +88,6 @@
       border-left: 1px solid black;
       padding-left: 1rem;
     }
+    
   
   }
