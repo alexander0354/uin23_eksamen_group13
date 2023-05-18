@@ -9,13 +9,20 @@
     padding: 20px;
     min-height: 100vh; 
   
-    .game-shop,
-    .my-games {
+    .game-shop {
+      position: relative;
       background-color: $light-gray;
       width: 100%;
-      max-width: 1200px;
+      max-width: 1400px;
       padding: $card-padding;
       margin-bottom: 20px;
+    }
+    .my-games {
+      position: relative;
+      right: 180px;
+      width: 65%;
+      max-width: 1200px;
+      margin-bottom: 10px;
     }
   
     .my-favourites {
@@ -35,7 +42,7 @@
   
     .my-games-container {
       width: calc(100% - 320px);
-      max-width: 1200px;
+      max-width: 1000px;
       padding: $card-padding;
       margin-bottom: 20px;
     }
@@ -49,7 +56,7 @@
       display: flex;
       justify-content: space-between;
       background-color: $main-bg-color;
-      border: 1px solid $light-gray;
+      
       padding: $card-padding;
       margin: $card-margin;
   
@@ -71,4 +78,13 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1rem;
     }
+    .my-favourites {
+      position: absolute;
+      top: calc(100% + 1rem);
+      right: 2rem;
+      width: 25%;
+      border-left: 1px solid black;
+      padding-left: 1rem;
+    }
+  
   }
