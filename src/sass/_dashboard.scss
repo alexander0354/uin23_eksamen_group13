@@ -78,13 +78,4 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1rem;
     }
-    .my-favourites {
-      position: absolute;
-      top: calc(100% + 1rem);
-      right: 2rem;
-      width: 25%;
-      border-left: 1px solid black;
-      padding-left: 1rem;
-    }
-    
   }
