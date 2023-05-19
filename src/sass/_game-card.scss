@@ -1,4 +1,10 @@
 // _game-card.scss
+.game-card {
+  background-color: $white; 
+  padding: $card-padding;
+  margin: $card-margin;
+  display: flex;
+  align-items: center;
 
 
 .gameShop{

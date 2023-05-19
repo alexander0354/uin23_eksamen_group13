@@ -2,6 +2,14 @@
 @import 'variables';
 
 
+.game-page {
+  background-color: $white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
 .game-card-text{
   position: center;
   width: 100%;
