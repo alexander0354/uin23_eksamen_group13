@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 
 const GameShop = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
     const fetchGames = async () => {
-      const response = await axios.get('https://api.rawg.io/api/games?key=cb756380bfee4e919c3c398e5bd0da08', {
+      const response = await fetch('https://api.rawg.io/api/games?key=cb756380bfee4e919c3c398e5bd0da08', {
         params: {
           ordering: '-rating',
           page_size: 10,
@@ -16,8 +16,9 @@ const GameShop = () => {
           'Authorization': 'Bearer cb756380bfee4e919c3c398e5bd0da08',
         },
       });
-      setGames(response.data.results);
-    }
+      const data = await response.json();
+      setGames(data.results);
+    };
     fetchGames();
   }, []);
 

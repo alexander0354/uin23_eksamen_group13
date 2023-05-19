@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+}
 
 .game-card-text{
   position: center;
@@ -17,7 +17,7 @@
   padding: $card-padding;
   margin-bottom: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
   gap: 1rem;
 
 
@@ -47,6 +47,6 @@
       button {
         align-self: flex-end;
       }
-    
+
   }
 }
