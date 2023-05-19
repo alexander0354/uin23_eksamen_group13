@@ -36,16 +36,19 @@ function DashBoard() {
         <div className="game-list">
           {newestGames.map((game) => (
             <GameCard key={game.id} game={game} />
+            
           ))}
         </div>
       </section>
 
       <section className="my-games">
         <h2>My Games</h2>
-        <div className="game-list">
-          {myGames.map((game) => (
-            <GameCard key={game.id} game={game} />
-          ))}
+        <div className="my-games-card">
+          <div className="game-list">
+            {myGames.map((game) => (
+              <GameCard key={game.id} game={game} />
+            ))}
+          </div>
         </div>
       </section>
 

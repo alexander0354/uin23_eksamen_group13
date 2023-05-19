@@ -1,31 +1,46 @@
-// _game-card.scss
+@import 'variables';
 
 .game-card {
-  background-color: $light-gray;
+  background-color: $light-grey;
   padding: $card-padding;
   margin: $card-margin;
   display: flex;
-  flex-direction: row;
   align-items: center;
 
+  
   img {
-    width: 100%;
+    width: 30%; 
     height: auto;
-    object-fit: cover;
+    object-fit: contain; 
+    margin-right: $card-padding; /* Lagt til litt mellomrom mellom bildet og teksten */
   }
 
   .text-content {
+    flex: 1; /* Bruker resten av tilgjengelig plass */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: $text-content-width;
-
+    a {
+      color: $black;
+      text-decoration: none;
+    
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     h3 {
       margin-bottom: $card-margin;
     }
 
-    button {
+    button.add-to-favourites {
       align-self: flex-end;
+      background-color: $black;
+      color: $white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
+    
   }
 }
