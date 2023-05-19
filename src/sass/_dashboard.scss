@@ -5,13 +5,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: $main-bg-color; //ikke denne
+    background-color: $main-bg-color; 
     padding: 20px;
     min-height: 100vh; 
   
     .game-shop {
       position: relative;
-      background-color: $light-gray; //ikke denne
+      background-color: $light-gray; 
       width: 100%;
       max-width: 1400px;
       padding: $card-padding;
@@ -27,7 +27,7 @@
     }
   
     .my-favourites {
-      background-color: $light-gray; //ikke denne
+      background-color: $light-gray; 
       width: 100%;
       max-width: 1200px;
       padding: $card-padding;
@@ -56,8 +56,7 @@
     .game-card {
       display: grid ;
       justify-content: space-between;
-      background-color: $main-bg-color;//ikke denne
-      
+      background-color: $main-bg-color;
       padding: $card-padding;
       margin: $card-margin;
   
