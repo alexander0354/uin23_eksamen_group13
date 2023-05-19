@@ -5,7 +5,7 @@
 .game-card-text{
   position: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: $card-padding;
   margin-bottom: 20px;
   display: grid;
@@ -27,7 +27,7 @@
       object-fit: cover;
     }
     .game-card-details {
-      display: grid;
+      display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: $text-content-width;
