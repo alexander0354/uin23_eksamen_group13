@@ -1,55 +1,44 @@
 // _game-page.scss
 @import 'variables';
 
-.game-page {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-  img {
-    max-width: 50%;
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 2rem;
-  }
+.game-card-text{
+  position: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: $card-padding;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
 
-  h2 {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-  }
 
-  p {
-    margin-bottom: 0.5rem;
-    text-align: justify;
-    line-height: 1.6;
-  }
-
-  .game-details {
-    display: flex;
-    flex-direction: column;
+  .game-card-image {
+    position: center;
+    padding: $card-padding;
+    margin: $card-margin;
+    display: grid;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    width: 100%;
 
-    .game-detail {
-      margin: 0.5rem;
+    img {
+      width: 60%;
+      height: 100%;
+      object-fit: cover;
     }
-  }
+    .game-card-details {
+      display: grid;
+      flex-direction: column;
+      justify-content: space-between;
+      width: $text-content-width;
+    }
+      h3 {
+        margin-bottom: $card-margin;
+      }
 
-  .purchase-button {
-    padding: 1rem 2rem;
-    background-color: $white;
-    color: $white;
+      button {
+        align-self: flex-end;
+      }
     
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: darken($white, 10%);
-    }
   }
 }
