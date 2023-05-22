@@ -1,24 +1,38 @@
-import { useParams } from 'react-router-dom';
-import '../sass/_game-page.scss';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const GamePage = ({ games }) => {
+const GamePage = () => {
+  const [gameInfo, setGameInfo] = useState(null);
   const { slug } = useParams();
-  const game = games.find(game => game.slug === slug);
 
-  if (!game) return <div>Gameinfo was not found!</div>;
+  useEffect(() => {
+    const fetchGameInfo = async () => {
+      try {
+        const response = await fetch(
+          `https://api.rawg.io/api/games/${slug}`
+        );
+        const data = await response.json();
+        setGameInfo(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchGameInfo();
+  }, [slug]);
 
   return (
-    <div className="game-page">
-      <img src={game.background_image} alt={game.name} />
-      <h2>{game.name}</h2>
-      <p>{game.description}</p>
-      <div className="game-details">
-        <p className="game-detail">Genre: {game.genres.map(genre => genre.name).join(', ')}</p>
-        <p className="game-detail">Release date: {game.released}</p>
-        <p className="game-detail">Publisher: {game.publishers.map(publisher => publisher.name).join(', ')}</p>
-        <p className="game-detail">Platforms: {game.platforms.map(platform => platform.platform.name).join(', ')}</p>
-      </div>
-      <button className="purchase-button">Buy now!</button>
+    <div>
+      {gameInfo ? (
+        <>
+          <h2>{gameInfo.name}</h2>
+          <img src={gameInfo.background_image} alt={gameInfo.name} />
+          <p>{gameInfo.description_raw}</p>
+          <p>Released: {gameInfo.released}</p>
+          <p>Genres: {gameInfo.genres.map((genre) => genre.name).join(", ")}</p>
+        </>
+      ) : (
+        <p>Loading game information...</p>
+      )}
     </div>
   );
 };

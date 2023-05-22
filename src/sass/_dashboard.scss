@@ -5,12 +5,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: $main-bg-color; 
     padding: 20px;
     min-height: 100vh; 
   
     .game-shop {
       position: relative;
-      background-color: $light-grey; 
+      background-color: $light-gray; 
       width: 100%;
       max-width: 1400px;
       padding: $card-padding;
@@ -26,6 +27,7 @@
     }
   
     .my-favourites {
+      background-color: $light-gray; 
       width: 100%;
       max-width: 1200px;
       padding: $card-padding;
@@ -54,13 +56,12 @@
     .game-card {
       display: grid ;
       justify-content: space-between;
-      background-color: $white;
-      
+      background-color: $main-bg-color;
       padding: $card-padding;
       margin: $card-margin;
   
       img {
-        width: 70%;
+        width: $game-card-image-width;
         object-fit: cover;
       }
   
@@ -75,7 +76,17 @@
   
     .game-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
       gap: 1rem;
     }
+    .my-favourites {
+      position: absolute;
+      top: calc(100% + 1rem);
+      right: 2rem;
+      width: 25%;
+      border-left: 1px solid black;
+      padding-left: 1rem;
+    }
+    
+  
   }
